@@ -17,6 +17,11 @@ const routes: Routes = [
     loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
+    path: 'pontos-coleta',
+    component: PainelComponent,
+    loadChildren: () => import('./pontos-coleta/pontos-coleta.module').then(m => m.PontosColetaModule)
+  },
+  {
     path: 'usuarios',
     component: PainelComponent,
     loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule)

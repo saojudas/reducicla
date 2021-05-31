@@ -1,3 +1,8 @@
 @import url('../../../assets/painel/css/bootstrap.css');
 @import url('../../../assets/painel/css/bootstrap-icons.css');
 @import url('../../../assets/painel/css/app.css');
+
+footer{
+  position: fixed;
+  bottom: 0;
+}

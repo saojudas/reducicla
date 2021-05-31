@@ -1,65 +1,48 @@
 <div class="page-heading">
-  <div class="page-title">
-      <div class="row">
-          <div class="col-12 col-md-6 order-md-2 order-first">
-              <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a [routerLink]="['./painel']">Dashboard</a></li>
-                  </ol>
-              </nav>
-          </div>
-      </div>
+  <h3>Dashboard</h3>
+</div>
+<div class="page-content">
+  <div class="container">
+
   </div>
-  <section class="section">
-      <div class="card">
-          <div class="card-header">
-              <h4 class="card-title">DASHBOARD</h4>
+  <section class="row">
+    <div class="col-12 col-lg-9">
+      <div class="row">
+        <div class="col-6 col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-body px-3 py-4-5">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="stats-icon blue">
+                      <i class="iconly-boldProfile"></i>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <h6 class="text-muted font-semibold">Usuários</h6>
+                  <h6 class="font-extrabold mb-0">{{ this.totalUsers }}</h6>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table mb-0 table-lg">
-                  <thead>
-                      <tr>
-                          <th>NAME</th>
-                          <th>RATE</th>
-                          <th>SKILL</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td class="text-bold-500">Michael Right</td>
-                          <td>$15/hr</td>
-                          <td class="text-bold-500">UI/UX</td>
-
-                      </tr>
-                      <tr>
-                          <td class="text-bold-500">Morgan Vanblum</td>
-                          <td>$13/hr</td>
-                          <td class="text-bold-500">Graphic concepts</td>
-
-                      </tr>
-                      <tr>
-                          <td class="text-bold-500">Tiffani Blogz</td>
-                          <td>$15/hr</td>
-                          <td class="text-bold-500">Animation</td>
-
-                      </tr>
-                      <tr>
-                          <td class="text-bold-500">Ashley Boul</td>
-                          <td>$15/hr</td>
-                          <td class="text-bold-500">Animation</td>
-
-                      </tr>
-                      <tr>
-                          <td class="text-bold-500">Mikkey Mice</td>
-                          <td>$15/hr</td>
-                          <td class="text-bold-500">Animation</td>
-
-                      </tr>
-                  </tbody>
-              </table>
-             </div>
+        </div>
+        <div class="col-6 col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-body px-3 py-4-5">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="stats-icon blue">
+                      <i class="iconly-boldProfile"></i>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <h6 class="text-muted font-semibold">Pontos de Coleta</h6>
+                  <h6 class="font-extrabold mb-0">{{ this.totalPontosColeta }}</h6>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
       </div>
+    </div>
   </section>
 </div>

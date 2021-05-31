@@ -1,28 +1,30 @@
-import { ResponsePageable } from './../interfaces/response-pageable.interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 // Enviroments
 import { environment } from 'src/environments/environment';
 
+// Interfaces
+import { ResponsePageable } from './../interfaces/response-pageable.interface';
+
 // Models
-import { Usuario } from '../models/usuario.model';
+import { PontoColeta } from '../models/ponto-coleta.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService {
+export class PontoColetaService {
 
   private baseURL = `${environment.baseUrlApi}/${environment.versionApi}`;
 
   constructor(private http: HttpClient) { }
 
   findAll(){
-    return this.http.get<ResponsePageable<Usuario>>(`${this.baseURL}/admin/usuarios`);
+    return this.http.get<ResponsePageable<PontoColeta>>(`${this.baseURL}/protected/ponto-coleta`);
   }
 
   count(){
-    return this.http.get<number>(`${this.baseURL}/admin/usuarios/count`);
+    return this.http.get<number>(`${this.baseURL}/admin/ponto-coleta/count`);
   }
 
 }
