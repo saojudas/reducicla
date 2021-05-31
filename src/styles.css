@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body{
-  height: 100%;
+  height: 100vh !important;
   width: 100%;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
@@ -10,13 +10,12 @@ html, body{
   background-color: #f2f7ff;
 }
 
-
 .color-green-secondary{
   color: #2ecc71 !important;
 }
 
 .color-green-third{
-  color: #27ae60 !important;
+  color: #2ecc71 !important;
 }
 
 .color-purple{
