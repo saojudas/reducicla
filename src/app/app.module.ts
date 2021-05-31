@@ -1,3 +1,4 @@
+import { HeaderInterceptor } from './../@core/interceptor/header-interceptor';
 import { HomeModule } from './../@pages/home/home.module';
 import { AppRoutingModule } from './app-routing-module';
 import { NgModule, LOCALE_ID } from '@angular/core';
@@ -9,6 +10,7 @@ import localeBr from '@angular/common/locales/pt';
 registerLocaleData(localeBr, 'pt');
 
 import { AppComponent } from './app.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [

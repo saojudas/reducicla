@@ -1,0 +1,55 @@
+<div id="sidebar" class="active">
+  <div class="sidebar-wrapper active">
+      <div class="sidebar-header">
+          <div class="d-flex justify-content-between">
+              <div class="logo">
+                  <a href="index.html"><img src="../../assets/painel/images/logo/logo.png" alt="Logo" srcset=""></a>
+              </div>
+              <div class="toggler">
+                  <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+              </div>
+          </div>
+      </div>
+      <div class="sidebar-menu">
+          <ul class="menu">
+
+              <li class="sidebar-item">
+                  <a [routerLink]="['/painel']" class='sidebar-link'>
+                      <i class="fas fa-tachometer-alt"></i>
+                      <span>Dashboard</span>
+                  </a>
+              </li>
+
+              <li class="sidebar-item">
+                <a [routerLink]="['/pontos-coleta']" class='sidebar-link'>
+                    <i i class="fas fa-map-marker-alt"></i>
+                    <span>Pontos de Coleta</span>
+                </a>
+              </li>
+
+              <li class="sidebar-item">
+                <a [routerLink]="['/publicacoes']" class='sidebar-link'>
+                    <i class="far fa-newspaper"></i>
+                    <span>Publicações</span>
+                </a>
+              </li>
+
+              <li class="sidebar-item">
+                <a [routerLink]="['/painel/usuarios']" class='sidebar-link'>
+                    <i class="fas fa-users"></i>
+                    <span>Usuários</span>
+                </a>
+              </li>
+
+              <li class="sidebar-item">
+                <a (click)="this.logout()" class='sidebar-link' style="cursor: pointer;">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sair</span>
+                </a>
+              </li>
+
+          </ul>
+      </div>
+      <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+  </div>
+</div>
