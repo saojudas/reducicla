@@ -1,0 +1,49 @@
+<div class="page-heading">
+  <div class="page-title">
+      <h3>Pontos de Coleta</h3>
+      <div class="row">
+          <div class="col-12 col-md-6 order-md-2 order-first">
+              <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/painel']">Dashboard</a></li>
+                    <li class="breadcrumb-item active"><a [routerLink]="['/painel/pontos-coleta']">Pontos de Coleta</a></li>
+                  </ol>
+              </nav>
+          </div>
+      </div>
+  </div>
+  <section class="section">
+      <div class="card">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table mb-0 table-lg">
+                  <thead>
+                      <tr>
+                        <th class="text-center">#ID</th>
+                        <th class="text-center">Data Cadastro</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Local</th>
+                        <th class="text-center">Colaboradores</th>
+                        <th class="text-center">Coletas</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let pontoColeta of (this.pontosColeta$ | async).content">
+                        <td class="text-center">{{ pontoColeta.id }}</td>
+                        <td class="text-center">{{ pontoColeta.dataCadastro | date }}</td>
+                        <td class="text-center">
+                          <span class="badge badge-primary" [ngClass]="{ 'bg-success': pontoColeta.aprovado, 'bg-danger': !pontoColeta.aprovado }">
+                            {{ pontoColeta.aprovado ? 'Ativo' : 'Inativo'}}
+                          </span>
+                        </td>
+                        <td class="text-center">{{ pontoColeta.endereco.bairro + ' - ' + pontoColeta.endereco.cidade }}</td>
+                        <td class="text-center">{{ pontoColeta.colaboradores.length }}</td>
+                        <td class="text-center">{{ pontoColeta.coletas.length }}</td>
+                      </tr>
+                  </tbody>
+              </table>
+             </div>
+          </div>
+      </div>
+  </section>
+</div>
