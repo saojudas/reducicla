@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-end">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination ">
+      <li class="page-item mr-2" [ngClass]="{ 'disabled': empty || first}" (change)="setCurrentSize()">
+        <select class="form-control" [(ngModel)]="this.size" style="height: 34px;">
+          <option *ngFor="let size of sizeOptions" [ngValue]="size">{{ size }}</option>
+        </select>
+      </li>
+      <li class="page-item" [ngClass]="{ 'disabled': empty || first}" (click)="firstPage()">
+        <a class="page-link">Primeira</a>
+      </li>
+      <li class="page-item" *ngIf="empty" [ngClass]="{ 'active': empty}">
+        <a class="page-link">1</a>
+      </li>
+      <ng-container *ngIf="!empty">
+        <li class="page-item" *ngFor="let page of indexes" [ngClass]="{ 'active': page == getCurrentPage()}" (click)="setCurrentPage(page)">
+          <a class="page-link">{{ page + 1 }}</a>
+        </li>
+      </ng-container>
+      <li class="page-item" [ngClass]="{ 'disabled': empty || last}" (click)="lastPage()">
+        <a class="page-link" href="#">Última</a>
+      </li>
+    </ul>
+  </nav>
+</div>

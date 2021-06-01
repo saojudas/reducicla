@@ -1,3 +1,4 @@
+import { SharedModule } from './../../@shared/shared.module';
 import { CoreModule } from './../../@core/core.module';
 import { MainComponent } from './main/main.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -10,6 +11,7 @@ import { PainelComponent } from './painel.component';
   imports: [
     PainelRoutingModule,
     CoreModule,
+    SharedModule,
     CommonModule
   ],
   declarations: [PainelComponent, SidebarComponent, MainComponent]

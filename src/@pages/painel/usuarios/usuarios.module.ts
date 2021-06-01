@@ -1,3 +1,4 @@
+import { SharedModule } from './../../../@shared/shared.module';
 import { CoreModule } from './../../../@core/core.module';
 import { UsuariosRoutingModule } from './usuarios-routing.module';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,7 @@ import { UsuarioService } from 'src/@core/services/usuario.service';
   imports: [
     UsuariosRoutingModule,
     CoreModule,
+    SharedModule,
     CommonModule
   ],
   declarations: [UsuariosComponent],

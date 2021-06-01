@@ -1,0 +1,54 @@
+
+<div class="modal-content">
+  <div class="modal-header border">
+      <h4 class="modal-title font-weight-bold">Dados Coleta #{{ coleta.id }}</h4>
+  </div>
+  <div class="modal-body">
+    <div class="d-flex bd-highlight">
+      <div class="p-2 flex-fill bd-highlight">
+        <div class="form-group">
+          <label for="first-name-column">Data da Coleta: </label>
+          <input type="text" class="form-control" placeholder="Não Informado" [value]="this.coleta.dataColeta | date" readonly>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex bd-highlight">
+      <div class="p-2 flex-fill bd-highlight">
+        <div class="form-group">
+          <label for="first-name-column">Coletor: </label>
+          <input type="text" class="form-control" placeholder="Não Informado" [value]="this.coleta.coletor.nome + ' ' + this.coleta.coletor.sobrenome" readonly>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex bd-highlight">
+      <div class="p-2 flex-fill bd-highlight">
+        <div class="form-group">
+          <label for="first-name-column">Colaborador: </label>
+          <input type="text" class="form-control" placeholder="Não Informado" [value]="this.coleta.colaborador.nome + ' ' + this.coleta.colaborador.sobrenome" readonly>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <h4 class="my-3">Lista de Materiais Coletados</h4>
+    <div class="table table-bordered table-responsive">
+      <table class="table mb-0 table-lg">
+          <thead>
+              <tr class="table-primary">
+                <th class="text-center">Material</th>
+                <th class="text-center">Quantidade</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr class="table-primary" *ngFor="let material of this.coleta.materiais">
+                <td class="text-center">{{ material.nome }}</td>
+                <td class="text-center">{{ material.quantidade }} KG</td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="modal-footer border">
+    <button type="button" class="btn btn-danger" (click)="onClose()">Fechar</button>
+  </div>
+</div><!-- /.modal-content -->
+

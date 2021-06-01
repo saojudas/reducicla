@@ -2,31 +2,45 @@
   <h3>Dashboard</h3>
 </div>
 <div class="page-content">
-  <div class="container">
-
-  </div>
   <section class="row">
-    <div class="col-12 col-lg-9">
+    <div class="col-12 col-lg-12">
       <div class="row">
-        <div class="col-6 col-lg-4 col-md-6">
-          <div class="card">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card border">
             <div class="card-body px-3 py-4-5">
               <div class="row">
                 <div class="col-md-4">
                   <div class="stats-icon blue">
-                      <i class="iconly-boldProfile"></i>
+                    <i class="fas fa-street-view"></i>
                   </div>
                 </div>
                 <div class="col-md-8">
-                  <h6 class="text-muted font-semibold">Usuários</h6>
-                  <h6 class="font-extrabold mb-0">{{ this.totalUsers }}</h6>
+                  <h6 class="text-muted font-semibold">Colaboradores</h6>
+                  <h6 class="font-extrabold mb-0">{{ this.totalColaboradores }}</h6>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-6 col-lg-4 col-md-6">
-          <div class="card">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card border">
+            <div class="card-body px-3 py-4-5">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="stats-icon blue">
+                    <i class="fas fa-hiking"></i>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <h6 class="text-muted font-semibold">Coletores</h6>
+                  <h6 class="font-extrabold mb-0">{{ this.totalColetores }}</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card border">
             <div class="card-body px-3 py-4-5">
               <div class="row">
                 <div class="col-md-4">
@@ -42,7 +56,77 @@
             </div>
           </div>
         </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card border">
+            <div class="card-body px-3 py-4-5">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="stats-icon blue">
+                    <i class="far fa-handshake"></i>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <h6 class="text-muted font-semibold">Coletas</h6>
+                  <h6 class="font-extrabold mb-0">{{ this.totalColetas }}</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
+  <section class="row">
+    <div class="col-xl-6 col-md-12 my-2">
+      <div class="card border h-100">
+        <div class="card-body px-3 py-4-5">
+          <div class="d-flex d-inline-flex p-2 bd-highlight justify-content-end my-3">
+            <select class="form-control" [(ngModel)]="this.lineChartYearSearch" (change)="this.buildTimeLineChart()">
+              <option [ngValue]="this.lineChartYearSearch - 3">{{ this.lineChartYearSearch - 3 }}</option>
+              <option [ngValue]="this.lineChartYearSearch - 2">{{ this.lineChartYearSearch - 2 }}</option>
+              <option [ngValue]="this.lineChartYearSearch - 1">{{ this.lineChartYearSearch - 1 }}</option>
+              <option [ngValue]="this.lineChartYearSearch">{{ this.lineChartYearSearch }}</option>
+              <ng-container *ngIf="this.lineChartYearSearch < this.actuallyYear">
+                <option [ngValue]="null" disabled>...</option>
+                <option [ngValue]="this.actuallyYear" >{{ this.actuallyYear}}</option>
+              </ng-container>
+            </select>
+          </div>
+          <apx-chart #lineChart
+            [series]="lineChartOptions.series"
+            [chart]="lineChartOptions.chart"
+            [xaxis]="lineChartOptions.xaxis"
+            [dataLabels]="lineChartOptions.dataLabels"
+            [grid]="lineChartOptions.grid"
+            [stroke]="lineChartOptions.stroke"
+            [title]="lineChartOptions.title"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6 col-md-12 my-2">
+      <div class="card border h-100">
+        <div class="card-body px-3 py-4-5">
+          <div class="d-flex d-inline-flex p-2 bd-highlight justify-content-end my-3">
+            <input type="date" class="form-control" [ngModel]="this.columnDateSearch.inicio | date:'yyyy-MM-dd'" (change)="this.buildColumnChart()" (ngModelChange)="updateRangeDateSearch($event, 'column', 'inicio')">
+            <input type="date" class="form-control" [ngModel]="this.columnDateSearch.fim | date:'yyyy-MM-dd'" (change)="this.buildColumnChart()" (ngModelChange)="updateRangeDateSearch($event, 'column', 'fim')">
+          </div>
+          <apx-chart #columnChart
+            [series]="columnChartOptions.series"
+            [chart]="columnChartOptions.chart"
+            [dataLabels]="columnChartOptions.dataLabels"
+            [plotOptions]="columnChartOptions.plotOptions"
+            [yaxis]="columnChartOptions.yaxis"
+            [xaxis]="columnChartOptions.xaxis"
+            [stroke]="columnChartOptions.stroke"
+            [grid]="columnChartOptions.grid"
+            [fill]="columnChartOptions.fill"
+            [title]="columnChartOptions.title"
+          ></apx-chart>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </div>

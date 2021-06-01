@@ -1,3 +1,4 @@
+import { SharedModule } from './../../@shared/shared.module';
 import { AuthService } from './../../@core/services/auth.service';
 import { CoreModule } from './../../@core/core.module';
 import { NgModule } from '@angular/core';
@@ -14,6 +15,7 @@ import { LoginComponent } from './login.component';
   imports: [
     LoginRoutingModule,
     CoreModule,
+    SharedModule,
     CommonModule
   ],
   declarations: [LoginComponent]

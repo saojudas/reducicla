@@ -7,12 +7,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    HttpClientModule,
-    FormsModule, ReactiveFormsModule
+    HttpClientModule
+
   ],
   exports: [
-    HttpClientModule,
-    FormsModule, ReactiveFormsModule
+    HttpClientModule
+
   ],
   declarations: [],
   providers: [

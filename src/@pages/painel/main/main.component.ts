@@ -12,4 +12,8 @@ export class MainComponent implements OnInit {
   ngOnInit() {
   }
 
+  toggleSideBar(){
+    document.getElementById('sidebar').classList.toggle('active');
+  }
+
 }

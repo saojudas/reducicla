@@ -17,6 +17,10 @@ export class UsuariosComponent implements OnInit, OnDestroy {
 
   subscription: Subscription = new Subscription();
 
+  // Pagination
+  page = 0;
+  size = 5;
+
   // Utils
   rolesLabel = rolesLabel;
 
@@ -31,11 +35,23 @@ export class UsuariosComponent implements OnInit, OnDestroy {
   }
 
   findAll(){
-    this.subscription.add(this.usuarioService.findAll().subscribe({
+    this.subscription.add(this.usuarioService.findAll(this.page, this.size).subscribe({
       next: usuarios => {
         this._usuarios.next(usuarios);
       }
     }))
+  }
+
+  // Method to get current page number of pagination event
+  handleCurrentPage(page: number){
+    this.page = page;
+    this.findAll();
+  }
+
+  // Method to get current size number of pagination event
+  handleCurrentSize(size: number){
+    this.size = size;
+    this.findAll();
   }
 
 }

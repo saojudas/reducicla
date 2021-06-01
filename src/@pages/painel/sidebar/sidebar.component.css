@@ -1,3 +1,9 @@
 @import url('../../../assets/painel/css/bootstrap.css');
 @import url('../../../assets/painel/css/bootstrap-icons.css');
 @import url('../../../assets/painel/css/app.css');
+
+
+.logo img{
+  width: 10rem !important;
+  height: 2.5rem !important;
+}

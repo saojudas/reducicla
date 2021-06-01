@@ -1,5 +1,5 @@
 import { AuthService } from './../../../@core/services/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,12 +11,30 @@ export class SidebarComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) { }
 
+  @HostListener('window:resize') onResize(){
+    const w = window.innerWidth;
+    if (w < 1200) {
+      document.getElementById('sidebar').classList.remove('active');
+    }
+    else {
+        document.getElementById('sidebar').classList.add('active');
+    }
+  }
+
   ngOnInit() {
+    var w = window.innerWidth;
+    if(w < 1200) {
+        document.getElementById('sidebar').classList.remove('active');
+    }
   }
 
   logout(){
     this.authService.logout();
     this.router.navigate(['/login']);
+  }
+
+  toggleSideBar(){
+    document.getElementById('sidebar').classList.toggle('active');
   }
 
 }

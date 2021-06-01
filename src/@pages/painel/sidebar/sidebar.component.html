@@ -3,10 +3,10 @@
       <div class="sidebar-header">
           <div class="d-flex justify-content-between">
               <div class="logo">
-                  <a href="index.html"><img src="../../assets/painel/images/logo/logo.png" alt="Logo" srcset=""></a>
+                  <a href="index.html"><img src="../../assets/painel/images/logo/logo.png" alt="Logo"></a>
               </div>
               <div class="toggler">
-                  <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                  <a class="sidebar-hide d-xl-none d-block" (click)="this.toggleSideBar()"><i class="bi bi-x bi-middle"></i></a>
               </div>
           </div>
       </div>
@@ -15,35 +15,35 @@
 
               <li class="sidebar-item">
                   <a [routerLink]="['/painel']" class='sidebar-link'>
-                      <i class="fas fa-tachometer-alt"></i>
+                      <i class="fas fa-tachometer-alt color-green-secondary"></i>
                       <span>Dashboard</span>
                   </a>
               </li>
 
               <li class="sidebar-item">
                 <a [routerLink]="['/painel/pontos-coleta']" class='sidebar-link'>
-                    <i i class="fas fa-map-marker-alt"></i>
+                    <i i class="fas fa-map-marker-alt color-green-secondary"></i>
                     <span>Pontos de Coleta</span>
                 </a>
               </li>
 
               <li class="sidebar-item">
                 <a [routerLink]="['/painel/publicacoes']" class='sidebar-link'>
-                    <i class="far fa-newspaper"></i>
+                    <i class="far fa-newspaper color-green-secondary"></i>
                     <span>Publicações</span>
                 </a>
               </li>
 
               <li class="sidebar-item">
                 <a [routerLink]="['/painel/usuarios']" class='sidebar-link'>
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-users color-green-secondary"></i>
                     <span>Usuários</span>
                 </a>
               </li>
 
               <li class="sidebar-item">
                 <a (click)="this.logout()" class='sidebar-link' style="cursor: pointer;">
-                    <i class="fas fa-sign-out-alt"></i>
+                    <i class="fas fa-sign-out-alt color-green-secondary"></i>
                     <span>Sair</span>
                 </a>
               </li>
