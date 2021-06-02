@@ -1,19 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ColetoresDetailComponent } from './coletores-detail/coletores-detail.component';
+
+// Guards
+import { AuthGuard } from 'src/@core/guards/auth.guard';
 
 // Components
 import { ColetoresComponent } from './coletores.component';
+import { ColetoresDetailComponent } from './coletores-detail/coletores-detail.component';
 
 const routes: Routes = [
 
   {
     path: '',
-    component: ColetoresComponent
+    component: ColetoresComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: ':id',
-    component: ColetoresDetailComponent
+    component: ColetoresDetailComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

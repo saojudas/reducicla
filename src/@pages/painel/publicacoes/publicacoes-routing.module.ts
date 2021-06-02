@@ -1,19 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PublicacoesDetailComponent } from './publicacoes-detail/publicacoes-detail.component';
+
+// Guards
+import { AuthGuard } from 'src/@core/guards/auth.guard';
 
 // Components
 import { PublicacoesComponent } from './publicacoes.component';
+import { PublicacoesDetailComponent } from './publicacoes-detail/publicacoes-detail.component';
 
 const routes: Routes = [
 
   {
     path: '',
-    component: PublicacoesComponent
+    component: PublicacoesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: ':id',
-    component: PublicacoesDetailComponent
+    component: PublicacoesDetailComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

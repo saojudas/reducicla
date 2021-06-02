@@ -26,4 +26,8 @@ export class AuthService {
     return JSON.parse(localStorage.getItem('credencial'))['token'];
   }
 
+  isLogged() {
+    return !!localStorage.getItem('credencial');
+  }
+
 }
