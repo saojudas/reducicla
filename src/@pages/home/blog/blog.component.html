@@ -7,63 +7,156 @@
           <h2><i class="far fa-thumbs-up"></i> Confira os últimos <em>Artigos</em></h2>
         </div>
       </div>
-      <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
-        <div class="top-dec">
-          <img src="assets/home/images/blog-dec.png" alt="">
-        </div>
-      </div>
     </div>
-    <div class="row">
-      <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
-        <div class="left-image">
-          <a href="#"><img src="https://www.hostinger.com.br/tutoriais/wp-content/uploads/sites/12/2019/01/WordPress-O-Que-e-Widget-e-Como-Adicionar-no-seu-Site.png" alt="Workspace Desktop"></a>
-          <div class="info">
-            <div class="inner-content">
-              <ul>
-                <li><i class="fa fa-calendar"></i> 29 de maio de 2021</li>
-              </ul>
-              <a href="#"><h4>Título 01</h4></a>
-              <p>Lorem ipsum dolor sit amet, consectetur and sed doer ket eismod tempor incididunt ut labore et dolore magna...</p>
+    <ng-container *ngIf="(this.publicacoes$ | async).numberOfElements == 1">
+      <div class="row justify-content-center mmy-5 py-5">
+        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="left-image">
+            <a><img [src]="(this.publicacoes$ | async).content[0].imageUrl != null ? (this.publicacoes$ | async).content[0].imageUrl : this.semImagemUrl" [alt]="(this.publicacoes$ | async).content[0].titulo"></a>
+            <div class="info">
+              <div class="inner-content">
+                <ul>
+                  <li><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[0].dataCadastro | date }}</li>
+                </ul>
+                <a><h4>{{ (this.publicacoes$ | async).content[0].titulo }}</h4></a>
+                <p>{{ (this.publicacoes$ | async).content[0].descricao }}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-6">
-        <div class="right-list mt-1">
-          <ul>
-            <li>
-              <div class="left-content align-self-center">
-                <span><i class="fa fa-calendar"></i> 17 de maio de 2021</span>
-                <a href="#"><h4>Título 02</h4></a>
-                <p>Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
+    </ng-container>
+    <ng-container *ngIf="(this.publicacoes$ | async).numberOfElements == 2">
+      <div class="row mt-5">
+        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="left-image">
+            <a><img [src]="(this.publicacoes$ | async).content[0].imageUrl != null ? (this.publicacoes$ | async).content[0].imageUrl : this.semImagemUrl" [alt]="(this.publicacoes$ | async).content[0].titulo"></a>
+            <div class="info">
+              <div class="inner-content">
+                <ul>
+                  <li><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[0].dataCadastro | date }}</li>
+                </ul>
+                <a><h4>{{ (this.publicacoes$ | async).content[0].titulo }}</h4></a>
+                <p>{{ (this.publicacoes$ | async).content[0].descricao }}</p>
               </div>
-              <div class="right-image">
-                <a href="#"><img src="https://www.vtcom.com.br/wp-content/uploads/2019/10/Redes-Sociais-e-WordPress.png" alt=""></a>
-              </div>
-            </li>
-            <li>
-              <div class="left-content align-self-center">
-                <span><i class="fa fa-calendar"></i> 10 de abril de 2021</span>
-                <a href="#"><h4>Título 03</h4></a>
-                <p>Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
-              </div>
-              <div class="right-image">
-                <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYxo3WFBFzqOm-jUVaSu71YKvf6OGRpobZGifwllk0-p7IVjcL_K9qA5qiWy-OfhSu4bk&usqp=CAU" alt=""></a>
-              </div>
-            </li>
-            <li>
-              <div class="left-content align-self-center">
-                <span><i class="fa fa-calendar"></i> 28 de fev. de 2021</span>
-                <a href="#"><h4>Título 04</h4></a>
-                <p>Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
-              </div>
-              <div class="right-image">
-                <a href="#"><img src="https://blog.handtalk.me/wp-content/uploads/2018/07/053-imagem-post-alt.png" alt=""></a>
-              </div>
-            </li>
-          </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="right-list mt-1">
+            <ul>
+              <li>
+                <div class="left-content align-self-center">
+                  <span><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[1].dataCadastro | date }}</span>
+                  <a><h4>{{ (this.publicacoes$ | async).content[1].titulo }}</h4></a>
+                  <p>{{ (this.publicacoes$ | async).content[1].descricao }}</p>
+                </div>
+                <div class="right-image">
+                  <a><img [src]="(this.publicacoes$ | async).content[1].imageUrl != null ? (this.publicacoes$ | async).content[1].imageUrl : this.semImagemUrl" alt=""></a>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    </ng-container>
+    <ng-container *ngIf="(this.publicacoes$ | async).numberOfElements == 3">
+      <div class="row mt-5">
+        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="left-image">
+            <a><img [src]="(this.publicacoes$ | async).content[0].imageUrl != null ? (this.publicacoes$ | async).content[0].imageUrl : this.semImagemUrl" [alt]="(this.publicacoes$ | async).content[0].titulo"></a>
+            <div class="info">
+              <div class="inner-content">
+                <ul>
+                  <li><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[0].dataCadastro | date }}</li>
+                </ul>
+                <a><h4>{{ (this.publicacoes$ | async).content[0].titulo }}</h4></a>
+                <p>{{ (this.publicacoes$ | async).content[0].descricao }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="right-list mt-1">
+            <ul>
+              <li>
+                <div class="left-content align-self-center">
+                  <span><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[1].dataCadastro | date }}</span>
+                  <a><h4>{{ (this.publicacoes$ | async).content[1].titulo }}</h4></a>
+                  <p>{{ (this.publicacoes$ | async).content[1].descricao }}</p>
+                </div>
+                <div class="right-image">
+                  <a><img [src]="(this.publicacoes$ | async).content[1].imageUrl != null ? (this.publicacoes$ | async).content[1].imageUrl : this.semImagemUrl" alt=""></a>
+                </div>
+              </li>
+              <li>
+                <div class="left-content align-self-center">
+                  <span><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[2].dataCadastro | date }}</span>
+                  <a><h4>{{ (this.publicacoes$ | async).content[2].titulo }}</h4></a>
+                  <p>{{ (this.publicacoes$ | async).content[2].descricao }}</p>
+                </div>
+                <div class="right-image">
+                  <a><img [src]="(this.publicacoes$ | async).content[2].imageUrl != null ? (this.publicacoes$ | async).content[2].imageUrl : this.semImagemUrl" alt=""></a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="(this.publicacoes$ | async).numberOfElements == 4">
+      <div class="row mt-5">
+        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="left-image">
+            <a><img [src]="(this.publicacoes$ | async).content[0].imageUrl != null ? (this.publicacoes$ | async).content[0].imageUrl : this.semImagemUrl" [alt]="(this.publicacoes$ | async).content[0].titulo"></a>
+            <div class="info">
+              <div class="inner-content">
+                <ul>
+                  <li><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[0].dataCadastro | date }}</li>
+                </ul>
+                <a><h4>{{ (this.publicacoes$ | async).content[0].titulo }}</h4></a>
+                <p>{{ (this.publicacoes$ | async).content[0].descricao }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="right-list mt-1">
+            <ul>
+              <li>
+                <div class="left-content align-self-center">
+                  <span><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[1].dataCadastro | date }}</span>
+                  <a><h4>{{ (this.publicacoes$ | async).content[1].titulo }}</h4></a>
+                  <p>{{ (this.publicacoes$ | async).content[1].descricao }}</p>
+                </div>
+                <div class="right-image">
+                  <a><img [src]="(this.publicacoes$ | async).content[1].imageUrl != null ? (this.publicacoes$ | async).content[1].imageUrl : this.semImagemUrl" alt=""></a>
+                </div>
+              </li>
+              <li>
+                <div class="left-content align-self-center">
+                  <span><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[2].dataCadastro | date }}</span>
+                  <a><h4>{{ (this.publicacoes$ | async).content[2].titulo }}</h4></a>
+                  <p>{{ (this.publicacoes$ | async).content[2].descricao }}</p>
+                </div>
+                <div class="right-image">
+                  <a><img [src]="(this.publicacoes$ | async).content[2].imageUrl != null ? (this.publicacoes$ | async).content[2].imageUrl : this.semImagemUrl" alt=""></a>
+                </div>
+              </li>
+              <li>
+                <div class="left-content align-self-center">
+                  <span><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[3].dataCadastro | date }}</span>
+                  <a><h4>{{ (this.publicacoes$ | async).content[3].titulo }}</h4></a>
+                  <p>{{ (this.publicacoes$ | async).content[3].descricao }}</p>
+                </div>
+                <div class="right-image">
+                  <a><img [src]="(this.publicacoes$ | async).content[3].imageUrl != null ? (this.publicacoes$ | async).content[3].imageUrl : this.semImagemUrl" alt=""></a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </ng-container>
   </div>
 </div>

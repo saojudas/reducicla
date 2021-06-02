@@ -1,0 +1,56 @@
+<div class="page-heading">
+  <div class="page-title">
+      <h3>Publicações</h3>
+      <div class="row">
+          <div class="col-12 col-md-6 order-md-2 order-first">
+              <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/painel']">Dashboard</a></li>
+                    <li class="breadcrumb-item active"><a [routerLink]="['/painel/publicacoes']">Publicações</a></li>
+                  </ol>
+              </nav>
+          </div>
+      </div>
+  </div>
+  <section class="section">
+      <div class="card border">
+        <div class="card-body">
+          <div class="row float-end mt-3 mb-5">
+            <div class="col-2">
+              <button type="button" class="btn btn-success" (click)="this.openModalAddPublicacao()">Cadastrar</button>
+            </div>
+          </div>
+          <div class="table table-bordered table-responsive">
+            <table class="table mb-0 table-lg">
+                <thead>
+                    <tr>
+                      <th class="text-center">#ID</th>
+                      <th class="text-center">Data Cadastro</th>
+                      <th class="text-center">Título</th>
+                      <th class="text-center">Comentários</th>
+                      <th class="text-center"><i class="fas fa-bars"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let publicacao of (this.publicacoes$ | async).content">
+                      <td class="text-center">{{ publicacao.id }}</td>
+                      <td class="text-center">{{ publicacao.dataCadastro | date }}</td>
+                      <td class="text-center">{{ publicacao.titulo }}</td>
+                      <td class="text-center">{{ publicacao.comentarios.length }}</td>
+                      <td class="text-center">
+                        <a class="mx-2" [title]="'Visualizar'" [routerLink]="['/painel/publicacoes', publicacao.id]">
+                          <i class="far fa-eye"></i>
+                        </a>
+                        <a class="mx-2" [title]="'Excluir'" (click)="this.delete(publicacao.id)">
+                          <i class="far fa-trash-alt text-danger"></i>
+                        </a>
+                      </td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+          <app-pagination [response]="publicacoes$" [sizeOptions]="[5, 10]" (currentPage)="handleCurrentPage($event)" (currentSize)="handleCurrentSize($event)"></app-pagination>
+        </div>
+      </div>
+  </section>
+</div>

@@ -2,3 +2,12 @@
 @import url('../../../assets/home/css/templatemo-space-dynamic.css');
 @import url('../../../assets/home/css/animated.css');
 @import url('../../../assets/home/css/owl.css');
+
+
+p {
+  overflow: hidden; /* remove o estouro do elemento */
+  text-overflow: ellipsis; /* adiciona “...” no final */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* quantidade de linhas */
+  -webkit-box-orient: vertical;
+}

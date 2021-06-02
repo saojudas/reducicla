@@ -1,3 +1,4 @@
+import { ModalPublicacaoAddComponent } from './modal/modal-publicacao-add/modal-publicacao-add.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ModalColetaDetailComponent } from './modal/modal-coleta-detail/modal-coleta-detail.component';
 import { PaginationComponent } from './pagination/pagination.component';
@@ -19,7 +20,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     NgApexchartsModule
   ],
   declarations: [
-    PaginationComponent, ModalColetaDetailComponent
+    PaginationComponent, ModalColetaDetailComponent, ModalPublicacaoAddComponent
   ],
   providers: []
 })

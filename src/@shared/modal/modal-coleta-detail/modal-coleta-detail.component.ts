@@ -14,7 +14,6 @@ export class ModalColetaDetailComponent implements OnInit {
   constructor(private modalRef: BsModalRef) { }
 
   ngOnInit() {
-    console.log(this.coleta);
   }
 
   onClose(){

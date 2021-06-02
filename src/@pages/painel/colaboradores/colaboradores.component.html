@@ -1,0 +1,50 @@
+<div class="page-heading">
+  <div class="page-title">
+      <h3>Colaboradores</h3>
+      <div class="row">
+          <div class="col-12 col-md-6 order-md-2 order-first">
+              <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/painel']">Dashboard</a></li>
+                    <li class="breadcrumb-item active"><a [routerLink]="['/painel/colaboradores']">Colaboradores</a></li>
+                  </ol>
+              </nav>
+          </div>
+      </div>
+  </div>
+  <section class="section">
+      <div class="card border">
+        <div class="card-body">
+          <div class="table table-bordered table-responsive">
+            <table class="table mb-0 table-lg">
+                <thead>
+                    <tr>
+                      <th class="text-center">#ID</th>
+                      <th class="text-center">Data Cadastro</th>
+                      <th class="text-center">Nome</th>
+                      <th class="text-center">Coletas</th>
+                      <th class="text-center">Materiais</th>
+                      <th class="text-center"><i class="fas fa-bars"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let colaborador of (this.colaboradores$ | async).content">
+                      <td class="text-center">{{ colaborador.id }}</td>
+                      <td class="text-center">{{ colaborador.dataCadastro | date }}</td>
+                      <td class="text-center">{{ colaborador.nome + ' ' + colaborador.sobrenome }}</td>
+                      <td class="text-center">{{ colaborador.coletas.length }}</td>
+                      <td class="text-center">{{ colaborador.materiais.length }}</td>
+                      <td class="text-center">
+                        <a class="mx-2" [title]="'Visualizar'" [routerLink]="['/painel/colaboradores', colaborador.id]">
+                          <i class="far fa-eye"></i>
+                        </a>
+                      </td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+          <app-pagination [response]="colaboradores$" [sizeOptions]="[5, 10]" (currentPage)="handleCurrentPage($event)" (currentSize)="handleCurrentSize($event)"></app-pagination>
+        </div>
+      </div>
+  </section>
+</div>

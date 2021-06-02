@@ -1,3 +1,5 @@
+import { CoreModule } from './../../@core/core.module';
+import { PostService } from './../../@core/services/post.service';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlogComponent } from './blog/blog.component';
@@ -13,10 +15,12 @@ import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    CoreModule
   ],
   declarations: [
     HomeComponent, HeaderComponent, BannerHeroComponent, AboutComponent, ServicesComponent, BlogComponent, ContactComponent, FooterComponent
-  ]
+  ],
+  providers: [PostService]
 })
 export class HomeModule { }

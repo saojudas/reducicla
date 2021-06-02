@@ -17,14 +17,19 @@ const routes: Routes = [
     loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
-    path: 'pontos-coleta',
+    path: 'colaboradores',
     component: PainelComponent,
-    loadChildren: () => import('./pontos-coleta/pontos-coleta.module').then(m => m.PontosColetaModule)
+    loadChildren: () => import('./colaboradores/colaboradores.module').then(m => m.ColaboradoresModule)
   },
   {
-    path: 'usuarios',
+    path: 'coletores',
     component: PainelComponent,
-    loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule)
+    loadChildren: () => import('./coletores/coletores.module').then(m => m.ColetoresModule)
+  },
+  {
+    path: 'publicacoes',
+    component: PainelComponent,
+    loadChildren: () => import('./publicacoes/publicacoes.module').then(m => m.PublicacoesModule)
   }
 ];
 

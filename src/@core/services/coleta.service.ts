@@ -17,8 +17,10 @@ export class ColetaService {
     return this.http.get<Coleta>(`${this.baseURL}/protected/coletas/${id}`);
   }
 
-  findAll(page: number, size: number, pontoColetaId: number){
-    return this.http.get<ResponsePageable<Coleta>>(`${this.baseURL}/protected/coletas?page=${page}&size=${size}&pontoColetaId=${pontoColetaId}`);
+  findAll(page: number, size: number, colaboradorId?: number, coletorId?: number){
+    if(colaboradorId != undefined) return this.http.get<ResponsePageable<Coleta>>(`${this.baseURL}/protected/coletas?page=${page}&size=${size}&colaboradorId=${colaboradorId}`);
+    else if (coletorId != undefined) return this.http.get<ResponsePageable<Coleta>>(`${this.baseURL}/protected/coletas?page=${page}&size=${size}&coletorId=${coletorId}`);
+    else return this.http.get<ResponsePageable<Coleta>>(`${this.baseURL}/protected/coletas?page=${page}&size=${size}&colaboradorId=${colaboradorId}&coletorId=${coletorId}`);
   }
 
   count(){

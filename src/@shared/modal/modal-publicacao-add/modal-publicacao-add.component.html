@@ -1,0 +1,45 @@
+
+<div class="modal-content">
+  <div class="modal-header border">
+      <h4 class="modal-title font-weight-bold">Adicionar Publicação</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="this.form" class="needs-validation" novalidate>
+      <div class="d-flex bd-highlight">
+        <div class="p-2 flex-fill bd-highlight">
+          <div class="form-group">
+            <label for="first-name-column">Título: <span class="text-danger">*</span> </label>
+            <input type="text" class="form-control" formControlName="titulo" placeholder="Informe um breve título para sua publicção" [(ngModel)]="publicacao.titulo" [ngClass]="{ 'is-invalid': submitted && f.titulo.errors }">
+            <div *ngIf="submitted && f.titulo.errors" class="invalid-feedback">
+              <div *ngIf="f.titulo.errors.required">Título é obrigatório</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex bd-highlight">
+        <div class="p-2 flex-fill bd-highlight">
+          <div class="form-group">
+            <label for="first-name-column">URL Imagem: </label>
+            <input type="text" class="form-control" formControlName="imageUrl" placeholder="" [(ngModel)]="publicacao.imageUrl">
+          </div>
+        </div>
+      </div>
+      <div class="d-flex bd-highlight">
+        <div class="p-2 flex-fill bd-highlight">
+          <div class="form-group">
+            <label for="first-name-column">Texto: <span class="text-danger">*</span> </label>
+            <textarea class="form-control" rows="10" formControlName="descricao" [(ngModel)]="publicacao.descricao" [ngClass]="{ 'is-invalid': submitted && f.descricao.errors }"></textarea>
+            <div *ngIf="submitted && f.descricao.errors" class="invalid-feedback">
+              <div *ngIf="f.descricao.errors.required">Texto é obrigatório</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer border">
+    <button type="submit" class="btn btn-success" (click)="this.onSubmit()">Cadastrar</button>
+    <button type="button" class="btn btn-danger" (click)="onClose()">Fechar</button>
+  </div>
+</div><!-- /.modal-content -->
+

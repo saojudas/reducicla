@@ -2,3 +2,10 @@
 @import url('../../../assets/home/css/templatemo-space-dynamic.css');
 @import url('../../../assets/home/css/animated.css');
 @import url('../../../assets/home/css/owl.css');
+
+
+.logo img{
+  width: 24px;
+  margin-right: 5px;
+  margin-top: -5px;
+}

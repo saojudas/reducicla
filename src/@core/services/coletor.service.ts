@@ -1,29 +1,28 @@
 import { ResponsePageable } from './../interfaces/response-pageable.interface';
+import { Coletor } from './../models/coletor.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-// Enviroments
 import { environment } from 'src/environments/environment';
-
-// Models
-import { Usuario } from '../models/usuario.model';
-import { Role } from '../enumerateds/role.enum';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService {
+export class ColetorService {
 
   private baseURL = `${environment.baseUrlApi}/${environment.versionApi}`;
 
   constructor(private http: HttpClient) { }
 
-  findAll(page: number, size: number){
-    return this.http.get<ResponsePageable<Usuario>>(`${this.baseURL}/admin/usuarios?page=${page}&size=${size}`);
+  findById(id: number){
+    return this.http.get<Coletor>(`${this.baseURL}/protected/coletores/${id}`);
   }
 
-  count(role: Role){
-    return this.http.get<number>(`${this.baseURL}/admin/usuarios/count?role=${role}`);
+  findAll(page: number, size: number){
+    return this.http.get<ResponsePageable<Coletor>>(`${this.baseURL}/protected/coletores?page=${page}&size=${size}`);
+  }
+
+  count(){
+    return this.http.get<number>(`${this.baseURL}/admin/coletores/count`);
   }
 
 }

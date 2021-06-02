@@ -1,0 +1,94 @@
+<div class="page-heading">
+  <div class="page-title">
+      <h3>Coletor: #{{ (this.coletor$ | async).id}}</h3>
+      <div class="row">
+          <div class="col-12 col-md-6 order-md-2 order-first">
+              <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/painel']">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a [routerLink]="['/painel/coletores']">Coletores</a></li>
+                    <li class="breadcrumb-item active"><a [routerLink]="['/painel/coletores', (this.coletor$ | async).id]">#{{ (this.coletor$ | async).id}}</a></li>
+                  </ol>
+              </nav>
+          </div>
+      </div>
+  </div>
+  <section class="section">
+    <div class="card border">
+      <div class="card-header">
+        <h4 class="card-title">Informações Gerais</h4>
+      </div>
+      <div class="card-body">
+        <div class="d-flex bd-highlight">
+          <div class="p-2 flex-fill bd-highlight">
+            <div class="form-group">
+              <label for="first-name-column">Data de Cadastro</label>
+              <p>{{ (this.coletor$ | async).dataCadastro | date }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex bd-highlight">
+          <div class="p-2 flex-fill bd-highlight">
+            <div class="form-group">
+              <label for="first-name-column">Nome</label>
+              <p>{{ (this.coletor$ | async).nome + ' ' + (this.coletor$ | async).sobrenome}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex bd-highlight">
+          <div class="p-2 flex-fill bd-highlight">
+            <div class="form-group">
+              <label for="first-name-column">Logradouro</label>
+              <p>{{ (this.coletor$ | async).endereco.logradouro + ', ' + (this.coletor$ | async).endereco.numero + ' - ' + (this.coletor$ | async).endereco.bairro + ', ' + (this.coletor$ | async).endereco.cep}}</p>
+            </div>
+          </div>
+          <div class="p-2 flex-fill bd-highlight">
+            <div class="form-group">
+              <label for="first-name-column">Cidade</label>
+              <p>{{ (this.coletor$ | async).endereco.cidade}}</p>
+            </div>
+          </div>
+          <div class="p-2 flex-fill bd-highlight">
+            <div class="form-group">
+              <label for="first-name-column">Estado</label>
+              <p>{{ (this.coletor$ | async).endereco.estado}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card border">
+      <div class="card-body">
+        <div class="table table-bordered table-responsive">
+          <table class="table mb-0 table-lg">
+              <thead>
+                  <tr>
+                    <th class="text-center">#ID</th>
+                    <th class="text-center">Data Coleta</th>
+                    <th class="text-center">Colaborador</th>
+                    <th class="text-center"><i class="fas fa-bars"></i></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let coleta of (this.coletas$ | async).content">
+                    <td class="text-center">{{ coleta.id }}</td>
+                    <td class="text-center">{{ coleta.dataColeta | date }}</td>
+                    <td class="text-center">{{ coleta.colaborador.nome + ' ' + coleta.colaborador.sobrenome }}</td>
+                    <td class="text-center">
+                      <a class="mx-2" [title]="'Visualizar'" (click)="this.openModalColeta(coleta)">
+                        <i class="far fa-eye"></i>
+                      </a>
+                    </td>
+                  </tr>
+              </tbody>
+          </table>
+        </div>
+        <app-pagination [response]="coletas$" [sizeOptions]="[5, 10]" (currentPage)="handleCurrentPage($event)" (currentSize)="handleCurrentSize($event)"></app-pagination>
+      </div>
+    </div>
+</section>
+
+</div>

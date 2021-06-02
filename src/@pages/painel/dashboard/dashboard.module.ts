@@ -1,5 +1,8 @@
+import { PostService } from './../../../@core/services/post.service';
+import { ColetorService } from './../../../@core/services/coletor.service';
+import { ColaboradorService } from './../../../@core/services/colaborador.service';
+import { ColetaService } from './../../../@core/services/coleta.service';
 import { SharedModule } from './../../../@shared/shared.module';
-import { PontoColetaService } from 'src/@core/services/ponto-coleta.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CoreModule } from './../../../@core/core.module';
@@ -7,7 +10,6 @@ import { CoreModule } from './../../../@core/core.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 
 import { DashboardComponent } from './dashboard.component';
-import { UsuarioService } from 'src/@core/services/usuario.service';
 import { ChartService } from 'src/@core/services/chart.service';
 
 @NgModule({
@@ -18,6 +20,6 @@ import { ChartService } from 'src/@core/services/chart.service';
     CommonModule
   ],
   declarations: [DashboardComponent],
-  providers: [UsuarioService, PontoColetaService, ChartService]
+  providers: [ColetaService, ColaboradorService, ColetorService, PostService, ChartService]
 })
 export class DashboardModule { }

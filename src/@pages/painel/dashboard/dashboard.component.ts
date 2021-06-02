@@ -1,10 +1,12 @@
+import { PostService } from './../../../@core/services/post.service';
+import { ColetorService } from './../../../@core/services/coletor.service';
+import { ColaboradorService } from './../../../@core/services/colaborador.service';
+import { ColetaService } from './../../../@core/services/coleta.service';
 import { ChartService } from './../../../@core/services/chart.service';
 import { ColumnChartOptions } from './../../../@core/interfaces/column-chart-options.interface';
 import { LineChartOptions } from './../../../@core/interfaces/line-chart-options.interface';
-import { PontoColetaService } from 'src/@core/services/ponto-coleta.service';
 import { Subscription } from 'rxjs';
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { UsuarioService } from 'src/@core/services/usuario.service';
 import { Role } from 'src/@core/enumerateds/role.enum';
 import { ChartComponent } from 'ng-apexcharts';
 
@@ -19,8 +21,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   totalColaboradores: number = 0;
   totalColetores: number = 0;
-  totalPontosColeta: number = 0;
   totalColetas: number = 0;
+  totalPublicacoes: number = 0;
 
   @ViewChild("lineChart") lineChart: ChartComponent;
   public lineChartOptions: Partial<LineChartOptions>;
@@ -31,13 +33,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
   actuallyYear = new Date().getFullYear();
   columnDateSearch: {inicio: Date, fim: Date} = {inicio: new Date((new Date()).getFullYear(), 0, 1), fim: new Date((new Date()).getFullYear(), 11, 31)};
 
-  constructor(private usuarioService: UsuarioService, private pontoColetaService: PontoColetaService, private coletaService: PontoColetaService, private chartService: ChartService) { }
+  constructor(private coletaService: ColetaService, private colaboradorService: ColaboradorService, private coletorService: ColetorService, private postService: PostService, private chartService: ChartService) { }
 
   ngOnInit() {
     this.countColaboradores();
     this.countColetores();
-    this.countPontosColeta();
     this.countColetas();
+    this.countPublicacoes();
     this.buildTimeLineChart();
     this.buildColumnChart();
   }
@@ -47,26 +49,26 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   countColaboradores(){
-    this.subscription.add(this.usuarioService.count(Role.COLABORADOR).subscribe({
+    this.subscription.add(this.colaboradorService.count().subscribe({
       next: totalColaboradores => this.totalColaboradores = totalColaboradores
     }))
   }
 
   countColetores(){
-    this.subscription.add(this.usuarioService.count(Role.COLETOR).subscribe({
+    this.subscription.add(this.coletorService.count().subscribe({
       next: totalColetores => this.totalColetores = totalColetores
-    }))
-  }
-
-  countPontosColeta(){
-    this.subscription.add(this.pontoColetaService.count().subscribe({
-      next: totalPontosColeta => this.totalPontosColeta = totalPontosColeta
     }))
   }
 
   countColetas(){
     this.subscription.add(this.coletaService.count().subscribe({
       next: totalColetas => this.totalColetas = totalColetas
+    }))
+  }
+
+  countPublicacoes(){
+    this.subscription.add(this.postService.count().subscribe({
+      next: totalPublicacoes => this.totalPublicacoes = totalPublicacoes
     }))
   }
 
@@ -124,7 +126,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
             }
           },
           dataLabels: {
-            enabled: false
+            enabled: true
           },
           stroke: {
             curve: "straight"

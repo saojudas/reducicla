@@ -1,0 +1,69 @@
+<div class="page-heading">
+  <div class="page-title">
+      <h3>Publicação: #{{ (this.publicacao$ | async).id}}</h3>
+      <div class="row">
+          <div class="col-12 col-md-6 order-md-2 order-first">
+              <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/painel']">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a [routerLink]="['/painel/publicacoes']">Publicações</a></li>
+                    <li class="breadcrumb-item active"><a [routerLink]="['/painel/publicacoes', (this.publicacao$ | async).id]">#{{ (this.publicacao$ | async).id}}</a></li>
+                  </ol>
+              </nav>
+          </div>
+      </div>
+  </div>
+  <section class="section">
+    <div class="card border">
+      <div class="card-header">
+        <h4 class="card-title">Informações Gerais</h4>
+      </div>
+      <div class="card-body">
+        <div class="d-flex bd-highlight">
+          <div class="p-2 flex-fill bd-highlight">
+            <div class="form-group">
+              <label for="first-name-column">Data de Cadastro</label>
+              <p>{{ (this.publicacao$ | async).dataCadastro | date }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex bd-highlight">
+          <div class="p-2 flex-fill bd-highlight">
+            <div class="form-group">
+              <label for="first-name-column">Título</label>
+              <p>{{ (this.publicacao$ | async).titulo}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex bd-highlight">
+          <div class="p-2 flex-fill bd-highlight">
+            <div class="form-group">
+              <label for="first-name-column">Descrição</label>
+              <textarea class="form-control mt-2" rows="5" readonly>{{ (this.publicacao$ | async).descricao}}</textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" *ngIf="(this.publicacao$ | async).comentarios.length > 0">
+    <div class="card border">
+      <div class="card-header">
+        <h4 class="card-title">Comentários</h4>
+      </div>
+      <div class="card-body">
+        <div class="d-flex justify-content-start my-2" *ngFor="let comentario of (this.publicacao$ | async).comentarios">
+          <div class="comentario-date border p-2">
+              <span> {{comentario.dataCadastro | date: 'dd/MM/yyyy'}}</span>
+          </div>
+          <div class="comentario-info border flex-fill">
+            <h4>{{ comentario.nome }}</h4>
+            <h5>{{ comentario.texto }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
