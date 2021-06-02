@@ -1,11 +1,15 @@
-import { ModalPublicacaoAddComponent } from './modal/modal-publicacao-add/modal-publicacao-add.component';
-import { ModalModule } from 'ngx-bootstrap/modal';
-import { ModalColetaDetailComponent } from './modal/modal-coleta-detail/modal-coleta-detail.component';
-import { PaginationComponent } from './pagination/pagination.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// Third Modules
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
+// Components
+import { ModalPublicacaoAddComponent } from './modal/modal-publicacao-add/modal-publicacao-add.component';
+import { ModalColetaDetailComponent } from './modal/modal-coleta-detail/modal-coleta-detail.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   imports: [

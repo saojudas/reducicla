@@ -1,6 +1,8 @@
-import { ResponsePageable } from './../../@core/interfaces/response-pageable.interface';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
+
+// Interfaces
+import { ResponsePageable } from 'src/@core/interfaces/response-pageable.interface';
 
 @Component({
   selector: 'app-pagination',

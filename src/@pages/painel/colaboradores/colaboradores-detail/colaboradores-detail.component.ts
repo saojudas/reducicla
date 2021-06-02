@@ -1,13 +1,21 @@
-import { ModalColetaDetailComponent } from './../../../../@shared/modal/modal-coleta-detail/modal-coleta-detail.component';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { ColetaService } from './../../../../@core/services/coleta.service';
-import { ResponsePageable } from './../../../../@core/interfaces/response-pageable.interface';
-import { Colaborador } from 'src/@core/models/colaborador.model';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
-import { ColaboradorService } from 'src/@core/services/colaborador.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+
+// Interfaces
+import { ResponsePageable } from 'src/@core/interfaces/response-pageable.interface';
+
+// Services
+import { ColetaService } from 'src/@core/services/coleta.service';
 import { Coleta } from 'src/@core/models/coleta.model';
+import { ColaboradorService } from 'src/@core/services/colaborador.service';
+
+// Components
+import { Colaborador } from 'src/@core/models/colaborador.model';
+import { ModalColetaDetailComponent } from 'src/@shared/modal/modal-coleta-detail/modal-coleta-detail.component';
+
+// Thirds
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-colaboradores-detail',

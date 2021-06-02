@@ -1,13 +1,18 @@
-import { PostService } from './../../../@core/services/post.service';
-import { ColetorService } from './../../../@core/services/coletor.service';
-import { ColaboradorService } from './../../../@core/services/colaborador.service';
-import { ColetaService } from './../../../@core/services/coleta.service';
-import { ChartService } from './../../../@core/services/chart.service';
-import { ColumnChartOptions } from './../../../@core/interfaces/column-chart-options.interface';
-import { LineChartOptions } from './../../../@core/interfaces/line-chart-options.interface';
-import { Subscription } from 'rxjs';
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { Role } from 'src/@core/enumerateds/role.enum';
+import { Subscription } from 'rxjs';
+
+// Interfaces
+import { ColumnChartOptions } from 'src/@core/interfaces/column-chart-options.interface';
+import { LineChartOptions } from 'src/@core/interfaces/line-chart-options.interface';
+
+// Services
+import { PostService } from 'src/@core/services/post.service';
+import { ColetorService } from 'src/@core/services/coletor.service';
+import { ColaboradorService } from 'src/@core/services/colaborador.service';
+import { ColetaService } from 'src/@core/services/coleta.service';
+import { ChartService } from 'src/@core/services/chart.service';
+
+// Thirds
 import { ChartComponent } from 'ng-apexcharts';
 
 @Component({

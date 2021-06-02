@@ -1,5 +1,9 @@
-import { Coleta } from './../../../@core/models/coleta.model';
 import { Component, Input, OnInit } from '@angular/core';
+
+// Components
+import { Coleta } from 'src/@core/models/coleta.model';
+
+// Thirds
 import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({

@@ -1,7 +1,13 @@
-import { ResponsePageable } from './../../../@core/interfaces/response-pageable.interface';
-import { ColaboradorService } from 'src/@core/services/colaborador.service';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+
+// Interfaces
+import { ResponsePageable } from 'src/@core/interfaces/response-pageable.interface';
+
+// Services
+import { ColaboradorService } from 'src/@core/services/colaborador.service';
+
+// Models
 import { Colaborador } from 'src/@core/models/colaborador.model';
 
 @Component({

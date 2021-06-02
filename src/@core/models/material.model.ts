@@ -1,5 +1,6 @@
 import { Colaborador } from './colaborador.model';
 import { TipoMaterial } from './../enumerateds/tipo-material.enum';
+
 export class Material {
   id: number;
   nome: string;

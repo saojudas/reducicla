@@ -1,7 +1,13 @@
-import { ResponsePageable } from './../../../@core/interfaces/response-pageable.interface';
-import { Subscription, BehaviorSubject, Observable } from 'rxjs';
-import { PostService } from './../../../@core/services/post.service';
 import { Component, OnInit } from '@angular/core';
+import { Subscription, BehaviorSubject, Observable } from 'rxjs';
+
+// Interfaces
+import { ResponsePageable } from 'src/@core/interfaces/response-pageable.interface';
+
+// Services
+import { PostService } from 'src/@core/services/post.service';
+
+// Models
 import { Post } from 'src/@core/models/post.model';
 
 @Component({

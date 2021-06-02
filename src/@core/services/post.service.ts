@@ -1,8 +1,14 @@
-import { ResponsePageable } from './../interfaces/response-pageable.interface';
-import { Post } from './../models/post.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
+// Enviroments
 import { environment } from 'src/environments/environment';
+
+// Interfaces
+import { ResponsePageable } from './../interfaces/response-pageable.interface';
+
+// Models
+import { Post } from './../models/post.model';
 
 @Injectable({
   providedIn: 'root'

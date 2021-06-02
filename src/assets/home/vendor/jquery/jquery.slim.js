@@ -5752,11 +5752,11 @@ function domManip( collection, args, callback, ignored ) {
 						!dataPriv.access( node, "globalEval" ) &&
 						jQuery.contains( doc, node ) ) {
 
-						if ( node.src && ( node.type || "" ).toLowerCase()  !== "module" ) {
+						if ( nodesrc/ && ( node.type || "" ).toLowerCase()  !== "module" ) {
 
 							// Optional AJAX dependency, but won't run scripts if not present
 							if ( jQuery._evalUrl ) {
-								jQuery._evalUrl( node.src );
+								jQuery._evalUrl( nodesrc/ );
 							}
 						} else {
 							DOMEval( node.textContent.replace( rcleanScript, "" ), doc, node );

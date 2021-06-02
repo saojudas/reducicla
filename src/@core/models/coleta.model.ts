@@ -2,6 +2,7 @@ import { Material } from './material.model';
 import { Colaborador } from './colaborador.model';
 import { Coletor } from './coletor.model';
 import { PontoColeta } from './ponto-coleta.model';
+
 export class Coleta {
   id: number;
   dataColeta: Date;

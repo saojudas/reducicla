@@ -1,4 +1,5 @@
 import { Sort } from './sort.interface';
+
 export interface Pageable {
   sort: Sort;
   offset: number;

@@ -1,6 +1,7 @@
 import { Coleta } from './coleta.model';
 import { Colaborador } from './colaborador.model';
 import { Endereco } from './endereco.model';
+
 export class PontoColeta {
   id: number;
   dataCadastro: Date;

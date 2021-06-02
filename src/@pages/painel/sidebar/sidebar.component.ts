@@ -1,6 +1,8 @@
-import { AuthService } from './../../../@core/services/auth.service';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+// Services
+import { AuthService } from 'src/@core/services/auth.service';
 
 @Component({
   selector: 'app-sidebar',

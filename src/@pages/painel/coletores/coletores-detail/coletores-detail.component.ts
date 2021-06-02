@@ -1,13 +1,21 @@
-import { ColetaService } from './../../../../@core/services/coleta.service';
-import { ColetorService } from './../../../../@core/services/coletor.service';
-import { Coleta } from './../../../../@core/models/coleta.model';
-import { ResponsePageable } from './../../../../@core/interfaces/response-pageable.interface';
-import { Coletor } from './../../../../@core/models/coletor.model';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ActivatedRoute } from '@angular/router';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+
+// Interfaces
+import { ResponsePageable } from 'src/@core/interfaces/response-pageable.interface';
+
+// Services
+import { ColetorService } from 'src/@core/services/coletor.service';
+import { ColetaService } from 'src/@core/services/coleta.service';
+
+// Components
+import { Coletor } from 'src/@core/models/coletor.model';
+import { Coleta } from 'src/@core/models/coleta.model';
 import { ModalColetaDetailComponent } from 'src/@shared/modal/modal-coleta-detail/modal-coleta-detail.component';
+
+// Thirds
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-coletores-detail',

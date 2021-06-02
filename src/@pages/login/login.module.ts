@@ -1,8 +1,11 @@
-import { SharedModule } from './../../@shared/shared.module';
-import { AuthService } from './../../@core/services/auth.service';
-import { CoreModule } from './../../@core/core.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { SharedModule } from './../../@shared/shared.module';
+import { CoreModule } from './../../@core/core.module';
+
+// Services
+import { AuthService } from './../../@core/services/auth.service';
 
 
 // Router
@@ -18,6 +21,7 @@ import { LoginComponent } from './login.component';
     SharedModule,
     CommonModule
   ],
-  declarations: [LoginComponent]
+  declarations: [LoginComponent],
+  providers: [AuthService]
 })
 export class LoginModule { }

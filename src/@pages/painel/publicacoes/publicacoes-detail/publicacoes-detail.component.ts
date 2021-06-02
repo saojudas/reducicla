@@ -1,9 +1,12 @@
-import { PostService } from './../../../../@core/services/post.service';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
-import { Post } from './../../../../@core/models/post.model';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BsModalRef } from 'ngx-bootstrap/modal';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+
+// Services
+import { PostService } from 'src/@core/services/post.service';
+
+// Components
+import { Post } from 'src/@core/models/post.model';
 
 @Component({
   selector: 'app-publicacoes-detail',

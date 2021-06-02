@@ -1,11 +1,17 @@
-import { Subscription } from 'rxjs';
-import { PostService } from './../../../@core/services/post.service';
-import { Post } from './../../../@core/models/post.model';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { BsModalRef } from 'ngx-bootstrap/modal';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+
+// Services
+import { PostService } from 'src/@core/services/post.service';
+
+// Components
+import { Post } from 'src/@core/models/post.model';
+
+// Thirds
+import { BsModalRef } from 'ngx-bootstrap/modal';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-modal-publicacao-add',

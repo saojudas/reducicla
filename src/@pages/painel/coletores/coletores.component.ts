@@ -1,8 +1,15 @@
-import { ColetorService } from './../../../@core/services/coletor.service';
-import { Coletor } from './../../../@core/models/coletor.model';
-import { ResponsePageable } from './../../../@core/interfaces/response-pageable.interface';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+
+// Interfaces
+import { ResponsePageable } from 'src/@core/interfaces/response-pageable.interface';
+
+// Services
+import { ColetorService } from 'src/@core/services/coletor.service';
+
+// Components
+import { Coletor } from 'src/@core/models/coletor.model';
+
 
 @Component({
   selector: 'app-coletores',

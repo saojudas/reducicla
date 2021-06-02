@@ -1,10 +1,19 @@
-import { ModalPublicacaoAddComponent } from './../../../@shared/modal/modal-publicacao-add/modal-publicacao-add.component';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { Post } from './../../../@core/models/post.model';
-import { ResponsePageable } from './../../../@core/interfaces/response-pageable.interface';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
-import { PostService } from './../../../@core/services/post.service';
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+
+
+// Interfaces
+import { ResponsePageable } from 'src/@core/interfaces/response-pageable.interface';
+
+// Services
+import { PostService } from 'src/@core/services/post.service';
+
+// Components
+import { Post } from 'src/@core/models/post.model';
+import { ModalPublicacaoAddComponent } from 'src/@shared/modal/modal-publicacao-add/modal-publicacao-add.component';
+
+// Thirds
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import Swal from 'sweetalert2';
 
 @Component({

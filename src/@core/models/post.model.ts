@@ -1,4 +1,5 @@
 import { Comentario } from './comentario.model';
+
 export class Post {
   id: number;
   dataCadastro: Date;

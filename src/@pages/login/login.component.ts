@@ -1,13 +1,16 @@
-import { Credencial } from './../../@core/interfaces/credencial.interface';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import Swal from 'sweetalert2'
+// Interfaces
+import { Credencial } from './../../@core/interfaces/credencial.interface';
 
 // Services
 import { AuthService } from './../../@core/services/auth.service';
+
+// Third
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',

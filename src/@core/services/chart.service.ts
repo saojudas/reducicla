@@ -1,7 +1,11 @@
-import { ChartResponseDTO } from '../interfaces/chart-response-dto.interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
+// Enviroments
 import { environment } from 'src/environments/environment';
+
+// Interfaces
+import { ChartResponseDTO } from '../interfaces/chart-response-dto.interface';
 
 @Injectable({
   providedIn: 'root'

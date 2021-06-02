@@ -1,17 +1,23 @@
-import { ColetaService } from './../../../@core/services/coleta.service';
-import { ColaboradoresDetailComponent } from './colaboradores-detail/colaboradores-detail.component';
-import { SharedModule } from './../../../@shared/shared.module';
-import { CoreModule } from './../../../@core/core.module';
-import { ColaboradoresRoutingModule } from './colaboradores-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ColaboradoresComponent } from './colaboradores.component';
+
+import { ColaboradoresRoutingModule } from './colaboradores-routing.module';
+
+import { SharedModule } from 'src/@shared/shared.module';
+import { CoreModule } from 'src/@core/core.module';
+
+// Services
+import { ColetaService } from 'src/@core/services/coleta.service';
 import { ColaboradorService } from 'src/@core/services/colaborador.service';
+
+// Components
+import { ColaboradoresComponent } from './colaboradores.component';
+import { ColaboradoresDetailComponent } from './colaboradores-detail/colaboradores-detail.component';
 
 @NgModule({
   imports: [
-    ColaboradoresRoutingModule,
     CommonModule,
+    ColaboradoresRoutingModule,
     CoreModule,
     SharedModule
   ],
