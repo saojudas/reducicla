@@ -963,6 +963,7 @@ About Us Style
 }
 
 .about-us .services .item p {
+  font-size: 0.75rem;
   color: #fff;
 }
 
@@ -1006,15 +1007,15 @@ Services Style
 }
 
 .our-services .first-bar span {
-  left: 69%;
+  left: 100%;
 }
 
 .our-services .second-bar span {
-  left: 81%;
+  left: 100%;
 }
 
 .our-services .third-bar span {
-  left: 88%;
+  left: 100%;
 }
 
 .our-services .progress-skill-bar h4 {
@@ -1044,15 +1045,15 @@ Services Style
 }
 
 .our-services .first-bar .filled-bar {
-  width: 71%;
+  width: 100%;
 }
 
 .our-services .second-bar .filled-bar {
-  width: 83%;
+  width: 100$;
 }
 
 .our-services .third-bar .filled-bar {
-  width: 90%;
+  width: 100%;
 }
 
 

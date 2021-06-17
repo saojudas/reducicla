@@ -11,3 +11,9 @@ p {
   -webkit-line-clamp: 3; /* quantidade de linhas */
   -webkit-box-orient: vertical;
 }
+
+
+.post-title:hover{
+  color: #465D37 !important;
+  text-decoration: underline !important;
+}

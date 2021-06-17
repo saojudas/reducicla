@@ -1,3 +1,4 @@
+import { SharedModule } from 'src/@shared/shared.module';
 import { CoreModule } from './../../@core/core.module';
 import { PostService } from './../../@core/services/post.service';
 import { FooterComponent } from './footer/footer.component';
@@ -16,7 +17,8 @@ import { HeaderComponent } from './header/header.component';
 @NgModule({
   imports: [
     CommonModule,
-    CoreModule
+    CoreModule,
+    SharedModule
   ],
   declarations: [
     HomeComponent, HeaderComponent, BannerHeroComponent, AboutComponent, ServicesComponent, BlogComponent, ContactComponent, FooterComponent

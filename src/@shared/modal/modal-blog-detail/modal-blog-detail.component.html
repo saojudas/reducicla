@@ -1,0 +1,17 @@
+
+<div class="modal-content">
+  <div class="modal-header border">
+      <h4 class="modal-title font-weight-bold">{{ post.titulo }}</h4>
+  </div>
+  <div class="modal-body">
+    <div class="d-flex bd-highlight">
+      <div class="p-2 flex-fill bd-highlight">
+        <p class="text-justify">{{post.descricao}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer border">
+    <button type="button" class="btn btn-danger" (click)="onClose()">Fechar</button>
+  </div>
+</div><!-- /.modal-content -->
+

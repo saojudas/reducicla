@@ -18,7 +18,7 @@
                 <ul>
                   <li><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[0].dataCadastro | date }}</li>
                 </ul>
-                <a><h4>{{ (this.publicacoes$ | async).content[0].titulo }}</h4></a>
+                <a (click)="this.openPost(this._publicacoes.getValue().content[0])"><h4 class="post-title" title="Visualizar">{{ (this.publicacoes$ | async).content[0].titulo }}</h4></a>
                 <p>{{ (this.publicacoes$ | async).content[0].descricao }}</p>
               </div>
             </div>
@@ -36,7 +36,7 @@
                 <ul>
                   <li><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[0].dataCadastro | date }}</li>
                 </ul>
-                <a><h4>{{ (this.publicacoes$ | async).content[0].titulo }}</h4></a>
+                <a (click)="this.openPost(this._publicacoes.getValue().content[0])"><h4 class="post-title" title="Visualizar">{{ (this.publicacoes$ | async).content[0].titulo }}</h4></a>
                 <p>{{ (this.publicacoes$ | async).content[0].descricao }}</p>
               </div>
             </div>
@@ -48,7 +48,7 @@
               <li>
                 <div class="left-content align-self-center">
                   <span><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[1].dataCadastro | date }}</span>
-                  <a><h4>{{ (this.publicacoes$ | async).content[1].titulo }}</h4></a>
+                  <a (click)="this.openPost(this._publicacoes.getValue().content[1])"><h4 class="post-title" title="Visualizar">{{ (this.publicacoes$ | async).content[1].titulo }}</h4></a>
                   <p>{{ (this.publicacoes$ | async).content[1].descricao }}</p>
                 </div>
                 <div class="right-image">
@@ -70,7 +70,7 @@
                 <ul>
                   <li><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[0].dataCadastro | date }}</li>
                 </ul>
-                <a><h4>{{ (this.publicacoes$ | async).content[0].titulo }}</h4></a>
+                <a (click)="this.openPost(this._publicacoes.getValue().content[0])"><h4 class="post-title" title="Visualizar">{{ (this.publicacoes$ | async).content[0].titulo }}</h4></a>
                 <p>{{ (this.publicacoes$ | async).content[0].descricao }}</p>
               </div>
             </div>
@@ -82,7 +82,7 @@
               <li>
                 <div class="left-content align-self-center">
                   <span><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[1].dataCadastro | date }}</span>
-                  <a><h4>{{ (this.publicacoes$ | async).content[1].titulo }}</h4></a>
+                  <a (click)="this.openPost(this._publicacoes.getValue().content[1])"><h4 class="post-title" title="Visualizar">{{ (this.publicacoes$ | async).content[1].titulo }}</h4></a>
                   <p>{{ (this.publicacoes$ | async).content[1].descricao }}</p>
                 </div>
                 <div class="right-image">
@@ -92,7 +92,7 @@
               <li>
                 <div class="left-content align-self-center">
                   <span><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[2].dataCadastro | date }}</span>
-                  <a><h4>{{ (this.publicacoes$ | async).content[2].titulo }}</h4></a>
+                  <a (click)="this.openPost(this._publicacoes.getValue().content[2])"><h4 class="post-title" title="Visualizar">{{ (this.publicacoes$ | async).content[2].titulo }}</h4></a>
                   <p>{{ (this.publicacoes$ | async).content[2].descricao }}</p>
                 </div>
                 <div class="right-image">
@@ -114,7 +114,7 @@
                 <ul>
                   <li><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[0].dataCadastro | date }}</li>
                 </ul>
-                <a><h4>{{ (this.publicacoes$ | async).content[0].titulo }}</h4></a>
+                <a (click)="this.openPost(this._publicacoes.getValue().content[0])"><h4 class="post-title" title="Visualizar">{{ (this.publicacoes$ | async).content[0].titulo }}</h4></a>
                 <p>{{ (this.publicacoes$ | async).content[0].descricao }}</p>
               </div>
             </div>
@@ -126,7 +126,7 @@
               <li>
                 <div class="left-content align-self-center">
                   <span><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[1].dataCadastro | date }}</span>
-                  <a><h4>{{ (this.publicacoes$ | async).content[1].titulo }}</h4></a>
+                  <a (click)="this.openPost(this._publicacoes.getValue().content[1])"><h4 class="post-title" title="Visualizar" class="post-title">{{ (this.publicacoes$ | async).content[1].titulo }}</h4></a>
                   <p>{{ (this.publicacoes$ | async).content[1].descricao }}</p>
                 </div>
                 <div class="right-image">
@@ -136,7 +136,7 @@
               <li>
                 <div class="left-content align-self-center">
                   <span><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[2].dataCadastro | date }}</span>
-                  <a><h4>{{ (this.publicacoes$ | async).content[2].titulo }}</h4></a>
+                  <a (click)="this.openPost(this._publicacoes.getValue().content[2])"><h4 class="post-title" title="Visualizar">{{ (this.publicacoes$ | async).content[2].titulo }}</h4></a>
                   <p>{{ (this.publicacoes$ | async).content[2].descricao }}</p>
                 </div>
                 <div class="right-image">
@@ -146,7 +146,7 @@
               <li>
                 <div class="left-content align-self-center">
                   <span><i class="fa fa-calendar"></i> {{ (this.publicacoes$ | async).content[3].dataCadastro | date }}</span>
-                  <a><h4>{{ (this.publicacoes$ | async).content[3].titulo }}</h4></a>
+                  <a (click)="this.openPost(this._publicacoes.getValue().content[3])"><h4 class="post-title" title="Visualizar">{{ (this.publicacoes$ | async).content[3].titulo }}</h4></a>
                   <p>{{ (this.publicacoes$ | async).content[3].descricao }}</p>
                 </div>
                 <div class="right-image">

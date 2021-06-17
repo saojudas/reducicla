@@ -10,6 +10,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ModalPublicacaoAddComponent } from './modal/modal-publicacao-add/modal-publicacao-add.component';
 import { ModalColetaDetailComponent } from './modal/modal-coleta-detail/modal-coleta-detail.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { ModalBlogDetailComponent } from './modal/modal-blog-detail/modal-blog-detail.component';
 
 @NgModule({
   imports: [
@@ -19,12 +20,12 @@ import { PaginationComponent } from './pagination/pagination.component';
     ModalModule.forRoot()
   ],
   exports: [
-    PaginationComponent, ModalColetaDetailComponent,
+    PaginationComponent, ModalColetaDetailComponent, ModalBlogDetailComponent,
     FormsModule, ReactiveFormsModule,
     NgApexchartsModule
   ],
   declarations: [
-    PaginationComponent, ModalColetaDetailComponent, ModalPublicacaoAddComponent
+    PaginationComponent, ModalColetaDetailComponent, ModalPublicacaoAddComponent, ModalBlogDetailComponent
   ],
   providers: []
 })
