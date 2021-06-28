@@ -1,27 +1,32 @@
-# ReduciclaApp
+# Reducicla Web APP
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
+Este projeto foi gerado utilizado o framework [Angular CLI](https://github.com/angular/angular-cli) em sua versão 11.2.3.
 
-## Development server
+Este projeto segue a proposta de desenvolvimento de uma landing page para a REDUCICLA. Além disso, contempla rota para `/login` (local onde o usuário admin realiza autenticação para acessar o painel administrativo) e outra para `/painel` (área administrativa do usuário admin - relatórios e gestão de informações) que exibe informações integradas ao APP.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+O projeto utiliza uma arquitetura modularizada da seguinte maneira:
+- @Core: models, services, interfaces, interceptors, guards e enumerateds;
+- @Shared: Componentes compartilhados com o restante da aplicação;
+- @Pages: Componentes que contemplam a construção de uma página(view).
 
-## Code scaffolding
+# Imagens Demonstrativas
+![Home](/src/assets/images/github/banner-hero.png)
+![Dashboard](src\assets\images\github\admin-dashboard.png)
+![Detalhes Coleta](/src/assets/images/github/coleta-detail.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Rodando a Aplicação Localmente
 
-## Build
+Execute `ng serve` para um servidor de desenvolvimento. Navegue até `http://localhost:4200/`. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Para Desenvolvimento
 
-## Running unit tests
+Execute `ng generate component-name` para gerar um novo componente. Você também pode usar `ng generate directive | pipe | service | class | guard | interface | enum | module`. 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Build da Aplicação
 
-## Running end-to-end tests
+Execute `ng build` para construir o projeto. Os artefatos de construção serão armazenados no diretório `dist/`. Use o sinalizador `--prod` para uma construção de produção. 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para obter mais ajuda sobre o Angular CLI, use `ng help` ou confira a página [Visão geral e referência de comandos do Angular CLI] (https://angular.io/cli). 
