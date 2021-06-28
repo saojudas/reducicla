@@ -11,7 +11,7 @@ O projeto utiliza uma arquitetura modularizada da seguinte maneira:
 
 # Imagens Demonstrativas
 ![Home](/src/assets/images/github/banner-hero.png)
-![Dashboard](src\assets\images\github\admin-dashboard.png)
+![Dashboard](src/assets/images/github/admin-dashboard.png)
 ![Detalhes Coleta](/src/assets/images/github/coleta-detail.png)
 
 ## Rodando a Aplicação Localmente
