@@ -2,7 +2,7 @@
 <div id="blog" class="our-blog section">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
+      <div class="col-lg-6">
         <div class="section-heading">
           <h2><i class="far fa-thumbs-up"></i> Confira os últimos <em>Artigos</em></h2>
         </div>
@@ -10,7 +10,7 @@
     </div>
     <ng-container *ngIf="(this.publicacoes$ | async).numberOfElements == 1">
       <div class="row justify-content-center mmy-5 py-5">
-        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+        <div class="col-lg-6">
           <div class="left-image">
             <a><img [src]="(this.publicacoes$ | async).content[0].imageUrl != null ? (this.publicacoes$ | async).content[0].imageUrl : this.semImagemUrl" [alt]="(this.publicacoes$ | async).content[0].titulo"></a>
             <div class="info">
@@ -28,7 +28,7 @@
     </ng-container>
     <ng-container *ngIf="(this.publicacoes$ | async).numberOfElements == 2">
       <div class="row mt-5">
-        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+        <div class="col-lg-6">
           <div class="left-image">
             <a><img [src]="(this.publicacoes$ | async).content[0].imageUrl != null ? (this.publicacoes$ | async).content[0].imageUrl : this.semImagemUrl" [alt]="(this.publicacoes$ | async).content[0].titulo"></a>
             <div class="info">
@@ -62,7 +62,7 @@
     </ng-container>
     <ng-container *ngIf="(this.publicacoes$ | async).numberOfElements == 3">
       <div class="row mt-5">
-        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+        <div class="col-lg-6">
           <div class="left-image">
             <a><img [src]="(this.publicacoes$ | async).content[0].imageUrl != null ? (this.publicacoes$ | async).content[0].imageUrl : this.semImagemUrl" [alt]="(this.publicacoes$ | async).content[0].titulo"></a>
             <div class="info">
@@ -106,7 +106,7 @@
     </ng-container>
     <ng-container *ngIf="(this.publicacoes$ | async).numberOfElements == 4">
       <div class="row mt-5">
-        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+        <div class="col-lg-6">
           <div class="left-image">
             <a><img [src]="(this.publicacoes$ | async).content[0].imageUrl != null ? (this.publicacoes$ | async).content[0].imageUrl : this.semImagemUrl" [alt]="(this.publicacoes$ | async).content[0].titulo"></a>
             <div class="info">
