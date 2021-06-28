@@ -29,8 +29,9 @@ public class MaterialEndpoint {
 
     /**
      * Registra um material
+     *
      * @param materialRequestDTO Objeto que irá fazer o bindig das informações do material para coleta
-     * @param colaboradorId Long - Código identificador do colaborador que esta registrando o material para coleta
+     * @param colaboradorId      Long - Código identificador do colaborador que esta registrando o material para coleta
      * @return Retorna o material registrado
      */
     @PostMapping("protected/materiais")
@@ -42,6 +43,7 @@ public class MaterialEndpoint {
 
     /**
      * Busca um material pelo seu código identificador
+     *
      * @param id Long - código identificador do material
      * @return Retorna o material localizado ou lança uma exceção ResourceNotFound caso não localizado
      */
@@ -54,6 +56,7 @@ public class MaterialEndpoint {
     /**
      * Deleta um material pelo seu código identificador
      * Endpoint acessado por usuários de nível ADMIN
+     *
      * @param id Long - Código identificador do material
      * @return Retorna nulo caso houver sucesso ou lança a exceção ResourceNotFound caso não localizado
      */

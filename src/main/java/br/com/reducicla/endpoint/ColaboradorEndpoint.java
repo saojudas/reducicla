@@ -30,6 +30,7 @@ public class ColaboradorEndpoint {
 
     /**
      * Busca um colaborador pelo seu código identificador
+     *
      * @param id Long - código identificador do colaborador
      * @return Retorna o colaborador localizado ou lança a exceção ResourceNotFound caso não localizado
      */
@@ -41,7 +42,8 @@ public class ColaboradorEndpoint {
 
     /**
      * Lista todos os colaboradores dentro de um objeto de paginação
-     * @param pageable Objeto que possui informações para paginação
+     *
+     * @param pageable  Objeto que possui informações para paginação
      * @param materiais Parâmetro não obrigatório. Caso true ele lista os colaboradores que possui materiais disponíveis para coleta e
      *                  caso false ele lista todos os colaboradores
      * @return Retorna a lista de colaboradores com paginação
@@ -53,6 +55,7 @@ public class ColaboradorEndpoint {
 
     /**
      * Contabiliza o número de registros para colaboradores
+     *
      * @return Retorna o número de registros de colaboradores encontrado
      */
     @GetMapping("admin/colaboradores/count")

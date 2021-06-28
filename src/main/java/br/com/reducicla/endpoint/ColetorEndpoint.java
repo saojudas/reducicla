@@ -34,6 +34,7 @@ public class ColetorEndpoint {
 
     /**
      * Busca um coletor pelo seu código identificador
+     *
      * @param id Long - Código identificador do coletor
      * @return Retorna o coletor localizado ou lança a exceção ResourceNotFound caso não localizado
      */
@@ -45,6 +46,7 @@ public class ColetorEndpoint {
 
     /**
      * Lista os coletores registrados com paginação
+     *
      * @param pageable Objeto que contém informações de paginação
      * @return Retorna uma lista de coletores com paginação
      */
@@ -56,6 +58,7 @@ public class ColetorEndpoint {
     /**
      * Contabiliza os registro de coletores
      * Endpoint acessado somente por usuários com nível ADMIN
+     *
      * @return Retorna o número de coletores registrados
      */
     @GetMapping("admin/coletores/count")

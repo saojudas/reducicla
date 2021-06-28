@@ -4,10 +4,6 @@ import br.com.reducicla.enumerated.Role;
 import br.com.reducicla.model.Endereco;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
-import org.hibernate.validator.constraints.br.CPF;
-
-import javax.validation.constraints.NotEmpty;
 
 /**
  * @author Lucas Copque on 26/05/2021

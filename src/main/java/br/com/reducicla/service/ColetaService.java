@@ -4,7 +4,6 @@ import br.com.reducicla.dto.response.ColetaResponseDTO;
 import br.com.reducicla.exception.ResourceNotFoundException;
 import br.com.reducicla.model.Coleta;
 import br.com.reducicla.repository.ColetaRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;

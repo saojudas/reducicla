@@ -33,6 +33,7 @@ public class ChartEndpoint {
 
     /**
      * Endpoint que disponibiliza as informações para o gráfico de timeline da Dashboard
+     *
      * @param ano Inteiro - ano da consulta
      * @return Retorna uma lista de objetos com label e value para build do chart
      */
@@ -44,8 +45,9 @@ public class ChartEndpoint {
 
     /**
      * Endpoint que disponibiliza as informações para o gráfico de coluna da Dashboard
+     *
      * @param inicio Data - início da consulta
-     * @param fim Data - fim da consulta
+     * @param fim    Data - fim da consulta
      * @return Retorna uma lista de objetos com label e value para build do chart
      */
     @GetMapping("admin/charts/column")

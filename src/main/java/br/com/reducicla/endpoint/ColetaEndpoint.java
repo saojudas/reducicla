@@ -39,7 +39,8 @@ public class ColetaEndpoint {
 
     /**
      * Registra uma coleta
-     * @param coletorId Long - Código identificador do colaborador associado à esta coleta
+     *
+     * @param coletorId     Long - Código identificador do colaborador associado à esta coleta
      * @param colaboradorId Long - Código identificador do coletor associado à esta coleta
      * @return Retorna a coleta salva
      */
@@ -54,6 +55,7 @@ public class ColetaEndpoint {
 
     /**
      * Busca uma coleta
+     *
      * @param id Long - Código identificador da coleta
      * @return Retorna a coleta localizada ou lança uma exceção ResourceNotFound caso não localizada
      */
@@ -65,9 +67,10 @@ public class ColetaEndpoint {
 
     /**
      * Retorna uma lista de coletas com paginação
-     * @param pageable Objeto que contém informações de paginação
+     *
+     * @param pageable      Objeto que contém informações de paginação
      * @param colaboradorId Parâmetro não obrigatório. Filtra as coletas por colaborador -> Long - Código identificador do colaborador
-     * @param coletorId Parâmetro não obrigatório. Filtra as coletas por coletor -> Long - Código identificador do coletor
+     * @param coletorId     Parâmetro não obrigatório. Filtra as coletas por coletor -> Long - Código identificador do coletor
      * @return Retorna uma lista de coletas com paginação
      */
     @GetMapping("protected/coletas")
@@ -78,6 +81,7 @@ public class ColetaEndpoint {
     /**
      * Deleta uma coleta.
      * Somente usuários com nível ADMIN conseguem acessar este endpoint.
+     *
      * @param id Long - Código identificador da coleta
      * @return Retorna nulo caso houver sucesso ou lança a exceção ResourceNotFound caso não localizado
      */
@@ -90,6 +94,7 @@ public class ColetaEndpoint {
 
     /**
      * Contabiliza os registro de coleta
+     *
      * @return Retorna no número de coletas registradas
      */
     @GetMapping("admin/coletas/count")
@@ -100,7 +105,8 @@ public class ColetaEndpoint {
 
     /**
      * Método auxiliar para buildar os objetos associados a coleta
-     * @param coleta Objeto que contém informações referente a coleta
+     *
+     * @param coleta      Objeto que contém informações referente a coleta
      * @param colaborador Objeto que contém informações referente ao colaborador
      */
     private void startColeta(Coleta coleta, Colaborador colaborador) {

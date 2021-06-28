@@ -1,6 +1,5 @@
 package br.com.reducicla.repository;
 
-import br.com.reducicla.enumerated.Role;
 import br.com.reducicla.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

@@ -3,7 +3,6 @@ package br.com.reducicla.endpoint;
 import br.com.reducicla.dto.request.PostRequestDTO;
 import br.com.reducicla.model.Post;
 import br.com.reducicla.service.PostService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -29,6 +28,7 @@ public class PostEndpoint {
 
     /**
      * Registra um post
+     *
      * @param postRequestDTO Objeto que irá fazer o binding do post
      * @return Retorna o post salvo
      */
@@ -39,6 +39,7 @@ public class PostEndpoint {
 
     /**
      * Busca um post pelo seu código identificador
+     *
      * @param id Long - Código identificador do post
      * @return Retorna o post localizado ou lança uma exceção ResourceNotFound caso não localizado
      */
@@ -50,6 +51,7 @@ public class PostEndpoint {
 
     /**
      * Lista os posts com paginação
+     *
      * @param pageable Objeto que contém informações de paginação
      * @return Retorna uma lista de post com paginação
      */
@@ -62,6 +64,7 @@ public class PostEndpoint {
     /**
      * Deleta um post pelo seu código identificador
      * Endpoint acessado somente por usuário com nível ADMIN
+     *
      * @param id Long - Código identificador do post
      * @return Retorna nulo caso houver sucesso ou lança a exceção ResourceNotFound caso não localizado
      */
@@ -75,6 +78,7 @@ public class PostEndpoint {
     /**
      * Contabiliza o número de posts registrador
      * Endpoint acessado somente por usuários com nível ADMIN
+     *
      * @return Retorna o número de posts registrados
      */
     @GetMapping("admin/posts/count")

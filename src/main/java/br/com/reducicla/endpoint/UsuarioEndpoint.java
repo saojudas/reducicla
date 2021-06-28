@@ -32,6 +32,7 @@ public class UsuarioEndpoint {
 
     /**
      * Registra um usuário
+     *
      * @param usuarioRequestDTO Objeto que irá fazer o binding de usuário
      * @return Retorna o usuário salvo
      */
@@ -42,6 +43,7 @@ public class UsuarioEndpoint {
 
     /**
      * Busca um usuário pelo seu código identificador
+     *
      * @param id Long - Código identificador do usuário
      * @return Retorna o usuário localizado ou lança uma exceção ResourceNotFound caso não localizado
      */
@@ -53,6 +55,7 @@ public class UsuarioEndpoint {
 
     /**
      * Retorna uma lista de usuário com paginação
+     *
      * @param pageable Objeto que contém informações e paginação
      * @return Retorna uma lista de usuários registrados
      */
@@ -64,6 +67,7 @@ public class UsuarioEndpoint {
     /**
      * Deleta um usuário pelo seu código identificador
      * Endpoint acessado somente por usuários com nível ADMIN
+     *
      * @param id Long - Código identificador do usuário
      * @return Retorna nulo caso houver sucesso ou lança a exceção ResourceNotFound caso não localizado
      */

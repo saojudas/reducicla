@@ -39,6 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * Adiciona configurações de cors e mapeamento de endpoints com autenticação e autorização.
+     *
      * @param http Objeto que contém informações da requisição http
      * @throws Exception Lança exeção caso algum erro for localizado em tempo de execução
      */
@@ -58,6 +59,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * Seta configurações iniciais de cors
+     *
      * @return Retorna um objeto com as configurações de cors setadas
      */
     @Bean
@@ -73,6 +75,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * Seta configurações como o spring boot deve validar a senha do usuário para autenticação
+     *
      * @param auth Objeto que contém informações de autenticação
      * @throws Exception Lança exeção caso algum erro for localizado em tempo de execução
      */

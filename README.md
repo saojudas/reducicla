@@ -15,10 +15,11 @@ Para construir e executar o aplicativo que você precisa:
 
 ## Executando o aplicativo localmente
 
+Existem várias maneiras de executar um aplicativo Spring Boot em sua máquina local. Uma maneira é executar o `main`
+localizado em `src/main/java/br/com/reducicla/ReduciclaApplication.java` a partir de sua IDE.
 
-Existem várias maneiras de executar um aplicativo Spring Boot em sua máquina local. Uma maneira é executar o `main` localizado em `src/main/java/br/com/reducicla/ReduciclaApplication.java` a partir de sua IDE.
-
-Ou como alternativa, você pode usar o [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html):
+Ou como alternativa, você pode usar
+o [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html):
 
 ```shell
 mvn spring-boot:run
@@ -26,4 +27,5 @@ mvn spring-boot:run
 
 ## Copyright
 
-Distribuído sob a licença Apache 2.0. Para maiores informações: [LICENSE](https://github.com/codecentric/springboot-sample-app/blob/master/LICENSE).
+Distribuído sob a licença Apache 2.0. Para maiores
+informações: [LICENSE](https://github.com/codecentric/springboot-sample-app/blob/master/LICENSE).
